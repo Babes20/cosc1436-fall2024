@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+/.vs
+/classwork/chapter1/.vs/chapter1
+/classwork/chapter1/helloworld/x64/Debug/helloworld.tlog
+/classwork/chapter1/x64/Debug
+*.user
+/classwork/chapter1/helloworld/x64/Debug
