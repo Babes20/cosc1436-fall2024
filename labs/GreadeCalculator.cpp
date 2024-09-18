@@ -67,7 +67,7 @@ int main()
     cout << "please enter final exam grade: ";
     cin >> finalExam;
 
-    //Display student information
+    //Display student's information
    
     cout << left << setw(8) << "studentName| " << setw(6) << "Grade|" << setw(6)<< "" << "letter" << endl;
     cout << setw(20) << setfill('-') << "" << setfill (' ') << endl;
