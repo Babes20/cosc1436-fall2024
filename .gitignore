@@ -36,3 +36,9 @@
 /classwork/chapter1/x64/Debug
 *.user
 /classwork/chapter1/helloworld/x64/Debug
+.vs/
+bin/
+obj/
+x64/
+x86/
+
