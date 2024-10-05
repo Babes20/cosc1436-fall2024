@@ -32,6 +32,14 @@
             }
         } while (loanAmount < 1 || loanAmount > 1000);
 
+        //get the intrest rate from the user
+
+        do {
+            cout << "please enter the interest rate (between 1.0 and 100.0): ";
+            cin >> interestRate;
+            if (interestRate < 1.0 || interestRate > 100.0);
+        }
+
 
             return 0;
         }
