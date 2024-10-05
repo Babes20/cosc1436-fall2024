@@ -46,6 +46,8 @@
 
             // Get the monthly payment from the user"
 
+        do {
+
 
 
             return 0;
