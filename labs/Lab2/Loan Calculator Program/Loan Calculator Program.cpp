@@ -32,13 +32,20 @@
             }
         } while (loanAmount < 1 || loanAmount > 1000);
 
-        //get the intrest rate from the user
+        //get the interest rate from the user
 
         do {
             cout << "please enter the interest rate (between 1.0 and 100.0): ";
             cin >> interestRate;
-            if (interestRate < 1.0 || interestRate > 100.0);
-        }
+            if (interestRate < 1.0 || interestRate > 100.0) {
+                cout << "Invalid interest rate. please enter a value between 1.0 and 100.0." << endl;
+            } while (interestRate < 1.0 || interestRate > 100.0);
+
+           // Convert the percentage to a decimal
+            interestRate /= 100;
+
+            // Get the monthly payment from the user"
+
 
 
             return 0;
