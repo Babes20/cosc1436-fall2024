@@ -39,7 +39,8 @@
             cin >> interestRate;
             if (interestRate < 1.0 || interestRate > 100.0) {
                 cout << "invalid interest rate. please enter a value between 1.0 and 100.0." << endl;
-            } while (interestRate < 1.0 || interestRate > 100.0);
+            }
+        } while (interestRate < 1.0 || interestRate > 100.0);
 
 
            // Convert the percentage to a decimal
@@ -64,13 +65,34 @@
             cout << "------------------------------------------------------------------------" << endl;
 
 
-            //Intial balance
+            //Initial balance
+
             newBalance = loanAmount;
 
             // loop through each month (up to 12)
 
+            for (month = 1; month <= 12; month++) {
+
+                // Display initial balance for the first month (no payment and interest)
+
+                if (month == 1) {
+                    monthlyInterest = 0.0;
+                    cout << setw(6) << month << setw(12) << fixed << setprecision(2) << "$ " << loanAmount
+                        << setw(12) << "$ 0.00" << setw(14) << "$ 0.00" << setw(18) << "$ " << newBalance << endl;
+                    break;
+                }
+
+                // if the loan is fully paid off 
+
+                if (newBalance <= 0) {
+                    newBalance = 0;
+                    cout << setw(6) << month << setw(12) << "$ 0.00" << setw(12) << "$ 0.00"
+                        << setw(14) << "$ 0.00" << setw(18) << "$ 0.00" << endl;
+                    break;
+                }
 
 
 
-            return 0;
-        }
+
+       return 0;
+       }
