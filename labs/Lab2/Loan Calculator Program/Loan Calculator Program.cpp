@@ -41,8 +41,10 @@
                 cout << "invalid interest rate. please enter a value between 1.0 and 100.0." << endl;
             } while (interestRate < 1.0 || interestRate > 100.0);
 
+
            // Convert the percentage to a decimal
             interestRate /= 100;
+
 
             // Get the monthly payment from the user"
 
@@ -50,7 +52,23 @@
             cout << "how much do you want to pay each month? ";
             cin >> payment;
             if (payment < 0 || payment > loanAmount) {
-                cout << "invalid"
+                cout << "invalid payment amount. it must be between $0 and the loan amount." << endl;
+            }
+            while (payment < 0 || payment > loanAmount);
+
+            //display table headers
+
+            cout << endl;
+            cout << setw(6) << "month" << setw(12) << "balance" << setw(12) << "payment" 
+                << setw(14) << "interest" << setw(18) << "new balance" << endl;
+            cout << "------------------------------------------------------------------------" << endl;
+
+
+            //Intial balance
+            newBalance = loanAmount;
+
+            // loop through each month (up to 12)
+
 
 
 
