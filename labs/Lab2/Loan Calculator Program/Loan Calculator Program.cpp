@@ -25,10 +25,10 @@
 
         // Get the initial loan amount from the user
         do {
-            cout << "Please enter the loan amount (between $1 and $1000): ";
+            cout << "please enter the loan amount (between $1 and $1000): ";
             cin >> loanAmount;
             if (loanAmount < 1 || loanAmount > 1000) {
-                cout << "Invalid loan amount. Please enter a value between $1 and $1000." << endl;
+                cout << "invalid loan amount. Please enter a value between $1 and $1000." << endl;
             }
         } while (loanAmount < 1 || loanAmount > 1000);
 
@@ -38,7 +38,7 @@
             cout << "please enter the interest rate (between 1.0 and 100.0): ";
             cin >> interestRate;
             if (interestRate < 1.0 || interestRate > 100.0) {
-                cout << "Invalid interest rate. please enter a value between 1.0 and 100.0." << endl;
+                cout << "invalid interest rate. please enter a value between 1.0 and 100.0." << endl;
             } while (interestRate < 1.0 || interestRate > 100.0);
 
            // Convert the percentage to a decimal
@@ -46,7 +46,11 @@
 
             // Get the monthly payment from the user"
 
-        do {
+        do { 
+            cout << "how much do you want to pay each month? ";
+            cin >> payment;
+            if (payment < 0 || payment > loanAmount) {
+                cout << "invalid"
 
 
 
