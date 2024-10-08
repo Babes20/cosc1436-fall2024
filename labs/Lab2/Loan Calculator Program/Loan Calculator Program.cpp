@@ -88,11 +88,29 @@
                     newBalance = 0;
                     cout << setw(6) << month << setw(12) << "$ 0.00" << setw(12) << "$ 0.00"
                         << setw(14) << "$ 0.00" << setw(18) << "$ 0.00" << endl;
-                    break;
+                    continue;
                 }
 
+                //subtracy the payment from the balance before calculating in the interest 
+
+                newBalance -= payment;
+                if (newBalance < 0) {
+                    payment += newBalance; // adjust the payment so it does not go below 0
+                    newBalance = 0;
+                }
+
+                //calculate interest
+                monthlyInterest = newBalance * interestRate;
+                totalInterest += monthlyInterest; 
+                totalPayments += payment;
+
+                // update new balance with interest added
+                newBalance += monthlyInterest;
+
+                //Display the values for the month
 
 
 
-       return 0;
-       }
+
+
+      
