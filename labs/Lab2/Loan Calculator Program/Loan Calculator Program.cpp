@@ -79,7 +79,7 @@
                     monthlyInterest = 0.0;
                     cout << setw(6) << month << setw(12) << fixed << setprecision(2) << "$ " << loanAmount
                         << setw(12) << "$ 0.00" << setw(14) << "$ 0.00" << setw(18) << "$ " << newBalance << endl;
-                    break;
+                    continue;
                 }
 
                 // if the loan is fully paid off 
