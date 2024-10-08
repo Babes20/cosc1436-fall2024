@@ -55,7 +55,7 @@
                 if (payment < 0 || payment > loanAmount) {
                     cout << "invalid payment amount. it must be between $0 and the loan amount." << endl;
                 }
-                while (payment < 0 || payment > loanAmount);
+            } while (payment < 0 || payment > loanAmount);
 
                 //display table headers
 
