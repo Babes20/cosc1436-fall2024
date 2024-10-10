@@ -28,10 +28,10 @@ struct Movie
 enum MenuCommand
 {
     //MC_Begin,
-    MC_AddMovie = 1,    //const int MenuCommand::MC_AddMovie = 0;
-    MC_EditMovie,
-    MC_DeleteMovie,
-    MC_ViewMovie,
+    AddMovie = 1,    //const int MenuCommand::MC_AddMovie = 0;
+    EditMovie,
+    DeleteMovie,
+    ViewMovie,
     //MC_End
 };
 
@@ -51,12 +51,10 @@ enum MenuCommand
 
 //HACK: Don't do this
 MenuCommand g_menuCommand = (MenuCommand)0;
-Movie g_movie;
-
+movieg_movie;
 void AddMovie()
 {
-    Movie movie;
-
+    movie movie;
     //Get required title
     do
     {
@@ -127,10 +125,8 @@ void AddMovie()
             break; //Exits the loop
 
         movie.Genre += genre + ", ";
-    };
-
-    //HACK: Don't do this
-    g_movie = movie;
+        //hack comment
+            g_movie = movie;
 }
 
 void DeleteMovie()
@@ -143,7 +139,7 @@ void EditMovie()
     cout << "EditMovie" << endl;
 }
 
-void ViewMovie(Movie movie)
+void ViewMovie()
 {
     ///// Display movie details
     cout << "---------------" << endl;
@@ -212,14 +208,12 @@ void HandleMenu(MenuCommand menuCommand)
 
 int main()
 {
-    do
-    {
-        //Function call ::= id ();    
-        DisplayMenu();
+    Do {
+    //Function call ::= id ();    
+    DisplayMenu();
 
-        //// Handle menu command
-        HandleMenu(g_menuCommand);
-    } while (true);
+    //// Handle menu command
+    HandleMenu(g_menuCommand);
+    } while (true)
+             
 }
-
-
