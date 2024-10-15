@@ -5,7 +5,7 @@
 using namespace std;
 
 // Movie: Title, Actors, Run length, Description, Genres, Director(s), Release Year, MPAA Rating
-struct Movie 
+struct Movie
 {
     //Required
     string Title;
@@ -52,6 +52,24 @@ enum MenuCommand
 //HACK: Don't do this
 MenuCommand g_menuCommand = (MenuCommand)0;
 Movie g_movie;
+
+/// @brief Reads a string from input
+/// @param message Message to display
+/// @return Input from user
+
+string ReadString(string message)
+{
+    string input;
+    do
+    {
+        cout << message;
+        getline(cin, input);
+
+        if (input == "")
+            cout << "ERROR: Title is required" << endl;
+    } while (input == "");
+    return input;
+}
 
 void AddMovie()
 {
@@ -197,6 +215,9 @@ void DisplayMenu()
     g_menuCommand = menuCommand;
 }
 
+// Parameter Kind
+//   Input ::= read in function, any valid expression as the argument
+
 /// Handles the menu selection
 /// @param menuCommand The command to handle
 void HandleMenu(MenuCommand menuCommand)
@@ -221,5 +242,3 @@ int main()
         HandleMenu(g_menuCommand);
     } while (true);
 }
-
-
