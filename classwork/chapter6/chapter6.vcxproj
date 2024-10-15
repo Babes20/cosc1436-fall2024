@@ -128,6 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="chapter6.cpp" />
+    <ClCompile Include="FileName.cpp" />
+    <ClCompile Include="terminal.cpp" />
+    <ClCompile Include="termminal.h.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="termial.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

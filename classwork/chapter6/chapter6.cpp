@@ -2,6 +2,8 @@
 #include <iomanip>
 #include <string>
 
+#include "terminal.h"
+
 using namespace std;
 
 // Movie: Title, Actors, Run length, Description, Genres, Director(s), Release Year, MPAA Rating
@@ -53,11 +55,35 @@ enum MenuCommand
 MenuCommand g_menuCommand = (MenuCommand)0;
 Movie g_movie;
 
-/// @brief Reads a string from input
-/// @param message Message to display
-/// @return Input from user
+//Function prototypes (function forwarding)
+int ReadInt(string, int, int);
+string ReadString(string message);
+string ReadString(string message, bool);
 
-string ReadString(string message)
+void AddMovie();
+void DeleteMovie();
+void EditMovie();
+void ViewMovie(Movie);
+
+void DisplayMenu();
+void HandleMenu(MenuCommand);
+
+int main()
+{
+    do
+    {
+        //Function call ::= id ();    
+        DisplayMenu();
+
+        //// Handle menu command
+        HandleMenu(g_menuCommand);
+    } while (true);
+}
+
+
+    
+  
+string ReadString(string message, bool isRequired)
 {
     string input;
     do
@@ -65,17 +91,28 @@ string ReadString(string message)
         cout << message;
         getline(cin, input);
 
-        if (input == "")
-            cout << "ERROR: Title is required" << endl;
-    } while (input == "");
+        if (isRequired && input == "")
+            cout << "ERROR: Value is required" << endl;
+    } while (isRequired && input == "");
+
     return input;
 }
+    /// @brief Reads a string from input
+   /// @param message Message to display 
+  ///@param isRequired True if the value is required
+  /// @return Input from user
+  string ReadString(string message)
+  {
+    return ReadString(message, false);
+};
+
 
 void AddMovie()
 {
     Movie movie;
-
+   
     //Get required title
+    movie.Title = ReadString("Enter a title: ", true);
     do
     {
         cout << "Enter a title: ";
@@ -86,6 +123,7 @@ void AddMovie()
     } while (movie.Title == "");
 
     //Get run length, at least 0, minutes
+    movie.RunLength = ReadInt(" ENTER RUN LENGTH ( IN MINUTES) : ", 0, 1440);
     do
     {
         cout << "Enter run length (in minutes): ";
@@ -106,6 +144,7 @@ void AddMovie()
     };
 
     //Get the optional description
+    movie.Description = ReadString("enter optional description: ");
     cout << "Enter optional description: ";
     cin.ignore();
     getline(cin, movie.Description);
@@ -231,14 +270,3 @@ void HandleMenu(MenuCommand menuCommand)
     };
 }
 
-int main()
-{
-    do
-    {
-        //Function call ::= id ();    
-        DisplayMenu();
-
-        //// Handle menu command
-        HandleMenu(g_menuCommand);
-    } while (true);
-}
