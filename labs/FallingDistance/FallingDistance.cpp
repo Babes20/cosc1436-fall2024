@@ -16,6 +16,8 @@ double Meter_or_Feet = 3.28084;
 void displayProgramInfo();
 int promptForTime();
 char promptForUnits();
+double calculateFallingDistance();
+void displayFallingTable();
 
 
 
@@ -53,7 +55,7 @@ int promptForUnits() {
             cout << "Error: please enter a time between 1 and 60 seconds. " << endl;
 
         }
-    }wjile(time < 1 || time > 60);
+    }while(time < 1 || time > 60);
 
     return 0;
 
@@ -69,10 +71,13 @@ char promptForUnits() {
         unit = 
             if (unit != M && unit != F) {
 
-                cout << Error: enetr m for meters or f for feet.
+                cout << Error: enetr M for Meters or F for Feet.
 
             }
-    } while (unit != m && unit != f);
+    } while (unit != M && unit != F);
 
     return 0;
 }
+
+double calculateFallingDistance 
+
