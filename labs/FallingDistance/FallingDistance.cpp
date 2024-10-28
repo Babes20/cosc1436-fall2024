@@ -10,42 +10,30 @@
 using namespace std;
 
 
-double Gravity = 9.8;
-double Meter_or_Feet = 3.28084;
+const double GRAVITY = 9.8;
+const double METER_TO_FEET = 3.28084;
 
-//  function prototypes
-
+// Function Prototypes
 void displayProgramInfo();
-int promptForTime();
-char promptForUnits();
-double FallingDistanceCalculation();
-void displayFallingTable();
-int seconds;
-double meters;
-
-
-
+double calculateFallingDistance(int seconds);
+double convertToFeet(double meters);
+void displayFallingTable(int time, char unit);
 
 int main() {
-
-// Display program information
+    // Display the program information
     displayProgramInfo();
 
-    // prompt the user for input
 
-    int time = promptForTime();
-    char unit = promptForUnits();
+    // Display the falling distance table
+    displayFallingTable() {
 
-    //display falling distance table
+        (int time, char unit);
 
-    displayFallingTable();
+    }
     
-        (time, unit);
 
     return 0;
-
 }
-
 void displayProgramInfo() {
 
     cout << "FallingDistance" << endl;
@@ -54,43 +42,34 @@ void displayProgramInfo() {
     cout << "=====================" << endl;
 }
 
+/ Prompts the user to input the falling time between 1 and 60 seconds
 int promptForTime() {
-
     int time;
-    
     do {
-        cout << "enter the falling time in seconds (1-60): ";
+        cout << "Enter the falling time in seconds (1 - 60): ";
         cin >> time;
         if (time < 1 || time > 60) {
-
-            cout << "Error: please enter a time between 1 and 60 seconds. " << endl;
-
+            cout << "Error: Please enter a time between 1 and 60 seconds." << endl;
         }
-    }while(time < 1 || time > 60);
-
+    } while (time < 1 || time > 60);
     return time;
-
 }
 
+// Prompts the user for the preferred unit (meters or feet) and validates input
 char promptForUnits() {
-
     char unit;
     do {
-
-        cout << "Do you want the results in Meter or Feet? (M/F) :";
+        cout << "Do you want the results in meters or feet? (m/f): ";
         cin >> unit;
-        if (unit != 'M' && unit != 'F') {
-
-            cout << "Error: please enter 'M' for Meters or 'F' for Feet. " << endl;
-
-            }
-    } while (unit != 'M' && unit != 'F');
-
+        unit = tolower(unit);  // Convert to lowercase for easy comparison
+        if (unit != 'm' && unit != 'f') {
+            cout << "Error: Please enter 'm' for meters or 'f' for feet." << endl;
+        }
+    } while (unit != 'm' && unit != 'f');
     return unit;
 }
 
-double FallingDistanceCalculator() {
-    return 0.5 * Gravity * pow(seconds, 2);
-
+// Calculates the falling distance in meters using the formula: d = 0.5 * g * t^2
+double calculateFallingDistance(int seconds) {
+    return 0.5 * GRAVITY * pow(seconds, 2);
 }
-
