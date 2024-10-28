@@ -15,22 +15,26 @@ const double METER_TO_FEET = 3.28084;
 
 // Function Prototypes
 void displayProgramInfo();
+int promptForTime();
+char promptForUnits();
 double calculateFallingDistance(int seconds);
 double convertToFeet(double meters);
-void displayFallingTable(int time, char unit);
+void displayFallingTable(int time, char units);
 
 int main() {
     // Display the program information
     displayProgramInfo();
 
+    // Prompt the user for input
+        int time = promptForTime();
+    char unit = promptForUnits();
 
     // Display the falling distance table
-    displayFallingTable() {
-
-        (time, unit);
+    displayFallingTable(time, unit);
 
     return 0;
 }
+
 void displayProgramInfo() {
 
     cout << "FallingDistance" << endl;
@@ -39,7 +43,7 @@ void displayProgramInfo() {
     cout << "=====================" << endl;
 }
 
-/ Prompts the user to input the falling time between 1 and 60 seconds
+// Prompts the user to input the falling time between 1 and 60 seconds
 int promptForTime() {
     int time;
     do {
@@ -70,6 +74,9 @@ char promptForUnits() {
 double calculateFallingDistance(int seconds) {
     return 0.5 * GRAVITY * pow(seconds, 2);
 }
+double convertToFeet(double meters) {
+    return meters * METER_TO_FEET;
+}
 
 void displayFallingTable(int time, char unit) {
     cout << setw(10) << "Seconds" << setw(15) << "Distance" << endl;
@@ -79,3 +86,13 @@ void displayFallingTable(int time, char unit) {
         double distance = calculateFallingDistance(i); 
         if (unit == 'f') {
             distance = convertToFeet(distance);
+        }
+
+        cout << setw(10) << i << setw(15) << fixed << setprecision(2) << distance;
+        if (unit == 'm') {
+            cout << " m" << endl;  // Display meters
+        } else {
+            cout << " ft" << endl; // Display feet
+        }
+    }
+}
