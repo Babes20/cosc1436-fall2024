@@ -13,11 +13,16 @@ using namespace std;
 double Gravity = 9.8;
 double Meter_or_Feet = 3.28084;
 
+//  function prototypes
+
 void displayProgramInfo();
 int promptForTime();
 char promptForUnits();
-double calculateFallingDistance();
+double FallingDistanceCalculation();
 void displayFallingTable();
+int seconds;
+double meters;
+
 
 
 
@@ -31,10 +36,16 @@ int main() {
     int time = promptForTime();
     char unit = promptForUnits();
 
+    //display falling distance table
+
+    displayFallingTable();
+    
+        (time, unit);
 
     return 0;
 
 }
+
 void displayProgramInfo() {
 
     cout << "FallingDistance" << endl;
@@ -43,7 +54,7 @@ void displayProgramInfo() {
     cout << "=====================" << endl;
 }
 
-int promptForUnits() {
+int promptForTime() {
 
     int time;
     
@@ -57,7 +68,7 @@ int promptForUnits() {
         }
     }while(time < 1 || time > 60);
 
-    return 0;
+    return time;
 
 }
 
@@ -68,16 +79,18 @@ char promptForUnits() {
 
         cout << "Do you want the results in Meter or Feet? (M/F) :";
         cin >> unit;
-        unit = 
-            if (unit != M && unit != F) {
+        if (unit != 'M' && unit != 'F') {
 
-                cout << Error: enetr M for Meters or F for Feet.
+            cout << "Error: please enter 'M' for Meters or 'F' for Feet. " << endl;
 
             }
-    } while (unit != M && unit != F);
+    } while (unit != 'M' && unit != 'F');
 
-    return 0;
+    return unit;
 }
 
-double calculateFallingDistance 
+double FallingDistanceCalculator() {
+    return 0.5 * Gravity * pow(seconds, 2);
+
+}
 
