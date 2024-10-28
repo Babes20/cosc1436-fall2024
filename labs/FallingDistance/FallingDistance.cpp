@@ -27,10 +27,7 @@ int main() {
     // Display the falling distance table
     displayFallingTable() {
 
-        (int time, char unit);
-
-    }
-    
+        (time, unit);
 
     return 0;
 }
@@ -55,7 +52,7 @@ int promptForTime() {
     return time;
 }
 
-// Prompts the user for the preferred unit (meters or feet) and validates input
+// Prompts the user for the preferred unit (meters or feet) 
 char promptForUnits() {
     char unit;
     do {
@@ -73,3 +70,12 @@ char promptForUnits() {
 double calculateFallingDistance(int seconds) {
     return 0.5 * GRAVITY * pow(seconds, 2);
 }
+
+void displayFallingTable(int time, char unit) {
+    cout << setw(10) << "Seconds" << setw(15) << "Distance" << endl;
+    cout << "==============================" << endl;
+
+    for (int i = 1; i <= time; ++i) {
+        double distance = calculateFallingDistance(i); 
+        if (unit == 'f') {
+            distance = convertToFeet(distance);
