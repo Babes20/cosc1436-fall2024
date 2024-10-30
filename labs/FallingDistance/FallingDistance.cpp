@@ -11,7 +11,7 @@ using namespace std;
 
 
 const double GRAVITY = 9.8;
-const double METER_TO_FEET = 3.28084;
+const double METER_OR_FEET = 3.28084;
 
 // Function Prototypes
 void displayProgramInfo();
@@ -62,7 +62,7 @@ char promptForUnits() {
     do {
         cout << "Do you want the results in meters or feet? (m/f): ";
         cin >> unit;
-        unit = tolower(unit);  // Convert to lowercase for easy comparison
+        unit = tolower(unit);  
         if (unit != 'm' && unit != 'f') {
             cout << "Error: Please enter 'm' for meters or 'f' for feet." << endl;
         }
@@ -75,20 +75,20 @@ double calculateFallingDistance(int seconds) {
     return 0.5 * GRAVITY * pow(seconds, 2);
 }
 double convertToFeet(double meters) {
-    return meters * METER_TO_FEET;
+    return meters * METER_OR_FEET;
 }
 
 void displayFallingTable(int time, char unit) {
     cout << setw(10) << "Seconds" << setw(15) << "Distance" << endl;
     cout << "==============================" << endl;
 
-    for (int i = 1; i <= time; ++i) {
-        double distance = calculateFallingDistance(i); 
+    for (int index = 1; index <= time; ++index) {
+        double distance = calculateFallingDistance(index); 
         if (unit == 'f') {
             distance = convertToFeet(distance);
         }
 
-        cout << setw(10) << i << setw(15) << fixed << setprecision(2) << distance;
+        cout << setw(10) << index << setw(15) << fixed << setprecision(2) << distance;
         if (unit == 'm') {
             cout << " m" << endl;  // Display meters
         } else {
