@@ -22,14 +22,22 @@ int Array(int numbers[], int maxSize) {
     int count = 0;
     int value;
 
-    while (count < maxsize) {
-        cout << "erroe: omly positive values are allowed " << endl;
+    while (count < maxSize) {
+        cout << " enter a value (0 to stop): ";
+        cin >> value;
+        if (value == 0)
+            break;
+        if (value < 0) {
+
+        cout << "error: only positive values are allowed " << endl;
+        continue;
     }
 
-    number[count++] = value;
+    numbers[count++] = value;
 
-    }
-    return count;
+}
+return count;
+
 }
 
 // display menu and user choice
@@ -46,5 +54,17 @@ char displaymenu() {
     cin >> choice;
     return;
 }
+
+// largest value in array
+
+int getlargestvalue(const int numbers[], int size) {
+    int largest = numbers
+        for int index = 1; index < size; index++) {
+
+            if (numbers[index] > largest) largest = numbers[index];
+        }
+        return largest;
+}
+
 
 
