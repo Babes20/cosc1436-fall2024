@@ -36,8 +36,15 @@ int Array(int numbers[], int maxSize) {
 char displaymenu() {
     cout << "Main menu << endl";
     cout << "A) add values << endl";
-    cout << "L) Largest value endl";
+    cout << "L) Largest value << endl";
     cout << "S) smallest value << endl";
     cout << "M) mean << endl";
-    cout <<
-    cout <<
+    cout << "V) view values << endl";
+    cout << "Q) quit << endl";
+    cout << " enter your choice: ";
+    char choice;
+    cin >> choice;
+    return;
+}
+
+
