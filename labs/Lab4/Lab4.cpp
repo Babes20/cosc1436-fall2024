@@ -58,13 +58,27 @@ char displayMenu() {
 // largest value in array
 
 int getLargestValue(const int numbers[], int size) {
-    int largest = numbers
+
+    int largest = numbers[0];
         for (int index = 1; index < size; index++) {
 
             if (numbers[index] > largest) largest = numbers[index];
         }
         return largest;
 }
+
+// smallest value in array
+
+int getSmallestValue(const int numbers[], int size) {
+
+    int smallest = numbers[0];
+    for (int index = 1; index < smallest; index++) {
+
+        if (numbers[index] < smallest) smallest = numbers[index];
+    }
+    return smallest;
+}
+
 
 
 
