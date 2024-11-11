@@ -52,7 +52,7 @@ char displayMenu() {
     cout << " enter your choice: ";
     char choice;
     cin >> choice;
-    return;
+    return choice;
 }
 
 // largest value in array
