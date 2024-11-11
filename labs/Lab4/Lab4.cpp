@@ -41,7 +41,7 @@ return count;
 }
 
 // display menu and user choice
-char displaymenu() {
+char displayMenu() {
     cout << "Main menu << endl";
     cout << "A) add values << endl";
     cout << "L) Largest value << endl";
@@ -57,9 +57,9 @@ char displaymenu() {
 
 // largest value in array
 
-int getlargestvalue(const int numbers[], int size) {
+int getLargestValue(const int numbers[], int size) {
     int largest = numbers
-        for int index = 1; index < size; index++) {
+        for (int index = 1; index < size; index++) {
 
             if (numbers[index] > largest) largest = numbers[index];
         }
