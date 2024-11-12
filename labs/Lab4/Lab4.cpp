@@ -46,6 +46,7 @@ char displayMenu() {
     cout << "A) add values << endl";
     cout << "L) Largest value << endl";
     cout << "S) smallest value << endl";
+    cout << "S) sum value << endl";
     cout << "M) mean << endl";
     cout << "V) view values << endl";
     cout << "Q) quit << endl";
@@ -80,5 +81,9 @@ int getSmallestValue(const int numbers[], int size) {
 }
 
 
+int(const int numbers[], int size) {
 
+    for int index = 0; index < size; index++
+
+}
 
