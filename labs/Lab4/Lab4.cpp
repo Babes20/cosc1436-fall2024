@@ -119,11 +119,55 @@ int insertValues(int numbers[], int currentSize, int maxSize) {
     
     }
 
-    int main () {
+    int main() {
 
         const int maxSize = 100;
         int numbers[maxSize];
         int size = 0;
 
-        displayprograminfo()
+        displayprograminfo();
+
+        size = array(numbers, maxSize);
+
+        char choice;
+
+        do {
+            choice = displayMenu();
+
+            switch (choice) {
+                case 'L':
+                    cout << "largest value = " << getLargestValue(numbers, size) << endl;
+                    break;
+                case 'S':
+                    cout << "smallest value = " << getSmallestValue(numbers, size) << endl;
+                    break;
+                case 'M':
+                    cout << "mean = " << setprecision(4) << getMean(numbers, size) << endl;
+                    break;
+                case 'V':
+                    viewValues(numbers, size);
+                    break;
+                case 'A':
+                    size = insertValues(numbers, size, maxSize);
+                    break;
+                case 'Q':
+                    cout << "exiting program " << endl;
+                    break;
+                default:
+                    cout << "invalid option. try again " << endl;
+                    break;
+
+            }
+        } while (choice != 'Q');
+
+        return 0;
+
+    }
+
+
+                    
+
+
+
+
 
