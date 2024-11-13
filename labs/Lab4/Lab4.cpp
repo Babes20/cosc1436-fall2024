@@ -80,10 +80,50 @@ int getSmallestValue(const int numbers[], int size) {
     return smallest;
 }
 
+// sum value in array
 
-int(const int numbers[], int size) {
+int getSum(const int numbers[], int size) {
 
-    for int index = 0; index < size; index++
+    int sum = 0;
+
+    for (int index = 0; index < size; index++) {
+        sum += numbers[index];
+
+    }
+    return sum;
 
 }
+
+double getMean(const int numbers[], int size) {
+
+    return double;
+
+}
+
+void viewValues(const int numbers[], int size) {
+
+    for (int index = 0; index < size; index++) {
+
+        cout << numbers[index] << endl;
+        if ((index + 1) / 10 == 0) cout << endl;
+
+    }
+    cout << 
+}
+
+int insertValues(int numbers[], int currentSize, int maxSize) {
+
+    int newValues = Array(numbers + currentSize, maxSize - currentSize) {
+
+        return currentSize + newValues;
+    
+    }
+
+    int main () {
+
+        const int maxSize = 100;
+        int numbers[maxSize];
+        int size = 0;
+
+        displayprograminfo()
 
