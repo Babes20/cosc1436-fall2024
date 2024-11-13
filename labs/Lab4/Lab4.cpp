@@ -17,7 +17,8 @@ void displayProgramInfo() {
 }
 
 // function for values and populate array
-int Array(int numbers[], int maxSize) {
+
+int populateArray(int numbers[], int maxSize) {
 
     int count = 0;
     int value;
@@ -25,6 +26,7 @@ int Array(int numbers[], int maxSize) {
     while (count < maxSize) {
         cout << " enter a value (0 to stop): ";
         cin >> value;
+
         if (value == 0)
             break;
         if (value < 0) {
@@ -41,12 +43,12 @@ return count;
 }
 
 // display menu and user choice
+
 char displayMenu() {
     cout << "Main menu << endl";
     cout << "A) add values << endl";
     cout << "L) Largest value << endl";
     cout << "S) smallest value << endl";
-    cout << "S) sum value << endl";
     cout << "M) mean << endl";
     cout << "V) view values << endl";
     cout << "Q) quit << endl";
@@ -87,12 +89,15 @@ int getSum(const int numbers[], int size) {
     int sum = 0;
 
     for (int index = 0; index < size; index++) {
+
         sum += numbers[index];
 
     }
     return sum;
 
 }
+
+//calculate mean of values in array
 
 double getMean(const int numbers[], int size) {
 
