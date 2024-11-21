@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-
 #include "terminal.h"
 
 using namespace std;
