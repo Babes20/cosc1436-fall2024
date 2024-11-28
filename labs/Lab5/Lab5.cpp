@@ -51,7 +51,7 @@ int main() {
             default:
                 cout << "Invalid choice. Please try again." << endl;
         }
-    } while (tolower(choice) != 'q');
+    } while (choice) != 'q';
     clearList(list);
     return 0;
 }
@@ -99,4 +99,52 @@ void addValue(LinkedList& list) {
             current->next = newNode;
         }
         cout << "Value added to the list." << endl;
+    }
+    void listValues(const LinkedList & list) {
+        if (!list.head) {
+            cout << "The list is empty." << endl;
+            return;
+        }
+        Node* current = list.head;
+        cout << "List contents: ";
+        while (current) {
+            cout << current->value << " ";
+            current = current->next;
+        }
+        cout << endl;
+    }
+
+    //delete a value from the linked list
+    void deleteValue(LinkedList& list) {
+        if (!list.head) {
+            cout << "The list is empty. Nothing to delete." << endl;
+            return;
+        }
+
+        int value;
+        cout << "Enter the integral value to remove: ";
+        while (!(cin >> value)) {
+            cout << "Invalid input. Please enter an integer: ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+
+        Node* current = list.head;
+        Node* previous = nullptr;
+
+        while (current) {
+            if (current->value == value) {
+                if (previous) {
+                    previous->next = current->next;
+                } else {
+                    list.head = current->next;
+                }
+                delete current;
+                cout << "Value removed from the list." << endl;
+                return;
+            }
+            previous = current;
+            current = current->next;
+        }
+        cout << "Value not found in the list." << endl;
     }
