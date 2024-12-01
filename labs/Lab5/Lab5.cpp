@@ -32,7 +32,7 @@ int main() {
         displayMainMenu();
         choice = getMenuChoice();
 
-        switch (tolower(choice)) {
+        switch ((choice)) {
             case 'a':
                 addValue(list);
                 break;
@@ -100,6 +100,8 @@ void addValue(LinkedList& list) {
         }
         cout << "Value added to the list." << endl;
     }
+
+    //list all values in the linked list
     void listValues(const LinkedList & list) {
         if (!list.head) {
             cout << "The list is empty." << endl;
@@ -115,6 +117,7 @@ void addValue(LinkedList& list) {
     }
 
     //delete a value from the linked list
+
     void deleteValue(LinkedList& list) {
         if (!list.head) {
             cout << "The list is empty. Nothing to delete." << endl;
@@ -147,4 +150,25 @@ void addValue(LinkedList& list) {
             current = current->next;
         }
         cout << "Value not found in the list." << endl;
+    }
+
+    //clear all values from the linked list
+
+    void clearList(LinkedList& list) {
+        char confirm;
+        cout << "Are you sure you want to clear the list? (Y/N): ";
+        cin >> confirm;
+        if (tolower(confirm) != 'y') {
+            cout << "List not cleared." << endl;
+            return;
+        }
+
+        Node* current = list.head;
+        while (current) {
+            Node* next = current->next;
+            delete current;
+            current = next;
+        }
+        list.head = nullptr;
+        cout << "List cleared." << endl;
     }
