@@ -74,11 +74,11 @@ void displayProgramInfo() {
 void displayMainMenu() {
     cout << "\nMain Menu" << endl;
     cout << "--------------------" << endl;
-    cout << "L) List" << endl;
-    cout << "A) Add" << endl;
-    cout << "D) Delete" << endl;
-    cout << "C) Clear" << endl;
-    cout << "Q) Quit" << endl;
+    cout << "L) ist" << endl;
+    cout << "A) dd" << endl;
+    cout << "D) elete" << endl;
+    cout << "C) lear" << endl;
+    cout << "Q) uit" << endl;
 }
 
 // Function to get a valid menu choice from the user
