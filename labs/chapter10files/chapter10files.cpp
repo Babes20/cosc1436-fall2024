@@ -54,7 +54,7 @@ std::cout << " hello " << name std::endl;
 
 std::stringstream msg
 msg << "hello " << name std::endl;
-display(logfile));
+display(logfile msg.str());
 
 // std::cout << "hello " << name std::endl;
 //display(logfile, "hello ");
