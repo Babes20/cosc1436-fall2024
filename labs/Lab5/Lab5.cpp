@@ -65,14 +65,14 @@ int main() {
 }
 // program information
 void displayProgramInfo() {
-    cout << "lab 4" << endl;
+    cout << "lab 5 " << endl;
     cout << "Frehiwot Tadesse" << endl;
     cout << "COSC 1436, Fall 2024" << endl;
     cout << "--------------------------------" << endl;
 }
 
 void displayMainMenu() {
-    cout << "\nMain Menu" << endl;
+    cout << "Main Menu" << endl;
     cout << "--------------------" << endl;
     cout << "L) ist" << endl;
     cout << "A) dd" << endl;
